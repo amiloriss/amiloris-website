@@ -1,11 +1,22 @@
 import React from 'react';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './App.scss';
+
+import Header from './layouts/Header';
+import Main from './layouts/Main';
+
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 const App = () => {
   return (
-    <div>
-      <h1>This is main component</h1>
-    </div>
+    <Provider store={store} r>
+      <div>
+        <Header />
+        <Main />
+      </div>
+    </Provider>
   );
 };
 
