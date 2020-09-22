@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { getMailData } from '../actions/action';
 
-const SendEmail = () => {
+const SendEmail = ({ getMailData }) => {
   const [mail, setMail] = useState({
     email: '',
     name: '',
@@ -14,19 +15,12 @@ const SendEmail = () => {
   const { email, name, subject, message } = mail;
   const onSubmit = (e) => {
     e.preventDefault();
-    let dataMail = {
-      email,
-      name,
-      subject,
-      message,
-    };
-    console.log(dataMail);
-    axios
-      .post('/api/forma', dataMail)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => console.log('message not sent' + error));
+    if (email === '' || name === '' || subject === '' || message === '') {
+      alert('sorry');
+    } else {
+      getMailData(email, name, subject, message);
+      setMail({ email: '', name: '', subject: '', message: '' });
+    }
   };
   return (
     <section className="send-email" id="send-email">
@@ -38,6 +32,7 @@ const SendEmail = () => {
           name="email"
           type="text"
           value={email}
+          required
         />
         <input
           onChange={onChange}
@@ -45,6 +40,7 @@ const SendEmail = () => {
           name="name"
           type="text"
           value={name}
+          required
         />
         <input
           onChange={onChange}
@@ -52,13 +48,15 @@ const SendEmail = () => {
           name="subject"
           type="text"
           value={subject}
+          required
         />
         <textarea
           onChange={onChange}
           placeholder="message"
           name="message"
-          rows="8"
+          rows="6"
           value={message}
+          required
         ></textarea>
         <input type="submit" value="send" />
       </form>
@@ -66,4 +64,4 @@ const SendEmail = () => {
   );
 };
 
-export default SendEmail;
+export default connect(null, { getMailData })(SendEmail);

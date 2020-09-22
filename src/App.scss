@@ -132,6 +132,13 @@ main {
         text-transform: uppercase;
         font-size: 20px;
         letter-spacing: 5px;
+        &:active,
+        &:focus {
+          outline: none;
+        }
+        &:invalid {
+          box-shadow: none;
+        }
       }
       textarea {
         resize: none;

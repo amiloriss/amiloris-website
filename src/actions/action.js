@@ -22,3 +22,22 @@ export const getData = () => async (dispatch) => {
     dispatch({ type: GET_ERROR });
   }
 };
+
+export const getMailData = (email, name, subject, message) => async (
+  dispatch
+) => {
+  try {
+    let dataMail = {
+      email,
+      name,
+      subject,
+      message,
+    };
+    await axios
+      .post('/api/form', dataMail)
+      .then((res) => res)
+      .catch((error) => console.log('message not sent' + error));
+  } catch (error) {
+    dispatch({ type: GET_ERROR });
+  }
+};
