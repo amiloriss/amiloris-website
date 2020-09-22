@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { getMailData } from '../actions/action';
+import Alert from './Alert';
 
 const SendEmail = ({ getMailData }) => {
+  const [alert, setAlert] = useState(false);
   const [mail, setMail] = useState({
     email: '',
     name: '',
@@ -16,7 +18,10 @@ const SendEmail = ({ getMailData }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === '' || name === '' || subject === '' || message === '') {
-      alert('sorry');
+      setAlert(true);
+      setTimeout(() => {
+        setAlert(false);
+      }, 3000);
     } else {
       getMailData(email, name, subject, message);
       setMail({ email: '', name: '', subject: '', message: '' });
@@ -25,14 +30,14 @@ const SendEmail = ({ getMailData }) => {
   return (
     <section className="send-email" id="send-email">
       <h2>Send Email To Me</h2>
+      <Alert active={alert} />
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
           placeholder="email"
           name="email"
-          type="text"
+          type="email"
           value={email}
-          required
         />
         <input
           onChange={onChange}
@@ -40,7 +45,6 @@ const SendEmail = ({ getMailData }) => {
           name="name"
           type="text"
           value={name}
-          required
         />
         <input
           onChange={onChange}
@@ -48,7 +52,6 @@ const SendEmail = ({ getMailData }) => {
           name="subject"
           type="text"
           value={subject}
-          required
         />
         <textarea
           onChange={onChange}
@@ -56,7 +59,6 @@ const SendEmail = ({ getMailData }) => {
           name="message"
           rows="6"
           value={message}
-          required
         ></textarea>
         <input type="submit" value="send" />
       </form>
