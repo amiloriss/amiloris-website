@@ -4,7 +4,7 @@ import AboutMe from '../components/AboutMe';
 import Greeting from '../components/Greeting';
 import Stack from '../components/Stack';
 import Projects from '../components/Projects';
-import ConnectWithMe from '../components/ConnectWithMe';
+import SendEmail from '../components/SendEmail';
 import { getData } from '../actions/action';
 import { WaveLoading } from 'react-loadingg';
 
@@ -23,7 +23,7 @@ const Main = ({ myData: { data }, getData }) => {
           <AboutMe />
           <Stack />
           <Projects />
-          <ConnectWithMe />
+          <SendEmail />
         </div>
       </main>
     );

@@ -56,13 +56,13 @@ const Navbar = () => {
         <li>
           <Link
             activeClass="active"
-            to="connect-with-me"
+            to="send-email"
             spy="true"
             smooth="true"
             offset={0}
             duration="500"
           >
-            Connect with me
+            Send Email To Me
           </Link>
         </li>
       </ul>

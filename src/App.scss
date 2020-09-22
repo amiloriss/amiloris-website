@@ -50,11 +50,12 @@ li {
 main {
   section {
     padding: 5rem 0;
-    height: 100vh;
+    height: 1080px;
     // min-height: 900px;
   }
   .greeting {
     position: relative;
+    height: 100vh;
     .greeting-title {
       width: 100%;
       position: absolute;
@@ -66,6 +67,7 @@ main {
   .about-me {
     h2 {
       text-align: center;
+      color: $middle-blue;
     }
     .information {
       display: flex;
@@ -77,15 +79,72 @@ main {
       p {
         font-size: 25px;
         text-align: justify;
-        text-decoration: underline;
         line-height: 1.7;
+        color: $dark-blue;
       }
     }
-    .wrapper {
-      display: flex;
-      .contacts {
+
+    .contacts {
+      ul {
+        justify-content: center;
+        display: flex;
+        background-color: $dark-blue;
+        color: $light-blue;
+        padding: 2px 0;
+        li {
+          padding: 0 10px;
+          font-size: 23px;
+          text-transform: uppercase;
+          i {
+            margin-right: 7px;
+          }
+        }
       }
-      .github-repos {
+    }
+    .github-repos {
+      ul {
+        padding-left: 0;
+        li {
+          border-bottom: 1px solid $dark-blue;
+          color: $dark-blue;
+          margin: 2px 0;
+          padding: 2px 20px;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .send-email {
+    position: relative;
+    h2 {
+      text-align: center;
+      color: $middle-blue;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      & > * {
+        margin: 20px 0;
+        border: 0;
+        border-bottom: 1px solid $dark-blue;
+        color: $dark-blue;
+        text-transform: uppercase;
+        font-size: 20px;
+        letter-spacing: 5px;
+      }
+      textarea {
+        resize: none;
+        line-height: 2;
+      }
+      input[type='submit'] {
+        border: none;
+        background-color: $dark-blue;
+        color: $light-blue;
+        font-size: 25px;
+        padding: 5px 30px;
+        text-transform: uppercase;
+        width: 12rem;
       }
     }
   }

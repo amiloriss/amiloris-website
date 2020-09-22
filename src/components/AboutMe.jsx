@@ -15,7 +15,6 @@ const AboutMe = ({
     getData();
     // eslint-disable-next-line
   }, []);
-  console.log(repos);
   return (
     <section className="about-me" id="about-me">
       <h2>{aboutMeTitle}</h2>
@@ -23,32 +22,31 @@ const AboutMe = ({
         <img src={data.avatar} alt="" />
         <p>{data.text}</p>
       </div>
-      <div className="wrapper">
-        <div className="contacts">
-          <ul>
-            <li>
-              <i class="fab fa-discord"></i>
-              {data.contacts.discord}
-            </li>
-            <li>
-              <i class="fab fa-telegram-plane"></i>
-              {data.contacts.telegram}
-            </li>
-            <li>
-              <i class="fab fa-whatsapp-square"></i>
-              {data.contacts.whats_up}
-            </li>
-          </ul>
-        </div>
-        <div className="github-repos">
-          <ul>
-            {repos !== null
-              ? repos.map((repo) => {
-                  return <GitHubRepos key={repo.id} repo={repo} />;
-                })
-              : null}
-          </ul>
-        </div>
+
+      <div className="contacts">
+        <ul>
+          <li>
+            <i className="fab fa-discord"></i>
+            {data.contacts.discord}
+          </li>
+          <li>
+            <i className="fab fa-telegram-plane"></i>
+            {data.contacts.telegram}
+          </li>
+          <li>
+            <i className="fab fa-whatsapp-square"></i>
+            {data.contacts.whats_up}
+          </li>
+        </ul>
+      </div>
+      <div className="github-repos">
+        <ul>
+          {repos !== null
+            ? repos.map((repo) => {
+                return <GitHubRepos key={repo.id} repo={repo} />;
+              })
+            : null}
+        </ul>
       </div>
     </section>
   );
