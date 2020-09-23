@@ -64,11 +64,17 @@ main {
       color: #fff;
     }
   }
+  section > h2 {
+    // text-align: right;
+    color: $light-blue;
+    // background-color: $dark-blue;
+    border-bottom: 2px solid $dark-blue;
+    // padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+  }
   .about-me {
-    h2 {
-      text-align: center;
-      color: $middle-blue;
-    }
     .information {
       display: flex;
       justify-content: center;
@@ -118,12 +124,6 @@ main {
     }
   }
   .send-email {
-    // position: relative;
-    h2 {
-      text-align: center;
-      color: $middle-blue;
-    }
-
     .overlay {
       position: fixed;
       top: -100%;

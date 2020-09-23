@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Stack = () => {
-  return <section id="stack">Here will be stack</section>;
+  return (
+    <section className="stack" id="stack">
+      <h2>Tech Stack</h2>.
+    </section>
+  );
 };
 
 export default Stack;
