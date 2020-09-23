@@ -4,7 +4,7 @@ import { getMailData } from '../actions/action';
 import Alert from './Alert';
 
 const SendEmail = ({ getMailData }) => {
-  const [alert, setAlert] = useState(false);
+  const [alert, setAlert] = useState({ msg: '', isAlerted: false });
   const [mail, setMail] = useState({
     email: '',
     name: '',
@@ -18,19 +18,23 @@ const SendEmail = ({ getMailData }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (email === '' || name === '' || subject === '' || message === '') {
-      setAlert(true);
+      setAlert({ msg: 'Please fill the all fields', isAlerted: true });
       setTimeout(() => {
-        setAlert(false);
+        setAlert({ msg: 'Please fill the all fields', isAlerted: false });
       }, 3000);
     } else {
       getMailData(email, name, subject, message);
+      setAlert({ msg: 'Your mail has been sent', isAlerted: true });
+      setTimeout(() => {
+        setAlert({ msg: 'Your mail has been sent', isAlerted: false });
+      }, 3000);
       setMail({ email: '', name: '', subject: '', message: '' });
     }
   };
   return (
     <section className="send-email" id="send-email">
       <h2>Send Email To Me</h2>
-      <Alert active={alert} />
+      <Alert msg={alert.msg} active={alert.isAlerted} />
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
