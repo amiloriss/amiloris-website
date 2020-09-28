@@ -16,9 +16,9 @@ const Projects = ({ myData: { projects } }) => {
       <div className="projects-wrapper">
         <ul className="projects-list">
           {Object.values(projects).map((project) => {
-            const { name, description, tech, cover } = project;
+            const { name, description, tech, cover, id } = project;
             return (
-              <li>
+              <li key={id}>
                 <div>
                   <img src={cover} alt="project" />
                 </div>
