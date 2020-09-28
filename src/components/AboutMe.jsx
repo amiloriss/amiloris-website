@@ -17,7 +17,9 @@ const AboutMe = ({
   }, []);
   return (
     <section className="about-me" id="about-me">
-      <h2>{aboutMeTitle}</h2>
+      <h2>
+        {aboutMeTitle} <i className="fas fa-user"></i>
+      </h2>
       <div className="information">
         <img src={data.avatar} alt="" />
         <p>{data.text}</p>

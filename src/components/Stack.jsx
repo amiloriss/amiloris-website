@@ -9,7 +9,9 @@ const Stack = ({ myData: { tech_stack } }) => {
   }, []);
   return (
     <section className="stack" id="stack">
-      <h2>Tech Stack</h2>
+      <h2>
+        Tech Stack <i className="fas fa-hammer"></i>
+      </h2>
       <ul className="tech-stack-list">
         {Object.values(tech_stack).map((el, id) => {
           return (

@@ -62,7 +62,7 @@ const Navbar = () => {
             offset={0}
             duration="500"
           >
-            Send Email To Me
+            Get in touch!
           </Link>
         </li>
       </ul>

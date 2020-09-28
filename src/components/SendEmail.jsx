@@ -33,12 +33,15 @@ const SendEmail = ({ getMailData }) => {
   };
   return (
     <section className="send-email" id="send-email">
-      <h2>Send Email To Me</h2>
+      <h2>
+        Send Email To Me <i className="fas fa-envelope"></i>
+      </h2>
       <Alert msg={alert.msg} active={alert.isAlerted} />
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
           placeholder="email"
+          a
           name="email"
           type="email"
           value={email}
