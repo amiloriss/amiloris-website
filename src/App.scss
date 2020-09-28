@@ -50,7 +50,7 @@ li {
 main {
   section {
     padding: 5rem 0;
-    height: 1080px;
+    // height: 1080px;
     // min-height: 900px;
   }
   .greeting {
@@ -123,6 +123,33 @@ main {
       }
     }
   }
+
+  .stack {
+    h2 {
+      margin-bottom: 50px;
+    }
+    .tech-stack-list {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+      padding-left: 0;
+
+      li {
+        // text-align: center;
+        border-bottom: 3px solid $middle-blue;
+        margin-bottom: 70px;
+        padding-bottom: 5px;
+        span {
+          font-weight: bold;
+          margin-left: 20px;
+          color: $dark-blue;
+          letter-spacing: 1px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
   .send-email {
     .overlay {
       position: fixed;

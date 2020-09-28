@@ -33,5 +33,5 @@ export const getMailData = (email, name, subject, message) => () => {
   axios
     .post('/api/form', dataMail)
     .then((res) => res)
-    .catch((error) => console.log('message not sent' + error));
+    .catch(() => {});
 };

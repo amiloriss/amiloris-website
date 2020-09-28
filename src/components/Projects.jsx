@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getData } from '../actions/action';
 
-const Projects = () => {
+const Projects = ({ myData }) => {
+  useEffect(() => {
+    getData();
+    // eslint-disable - next - line
+  }, []);
   return (
     <section className="projects" id="projects">
-      <h2>here will be projects</h2>
+      <h2>my projects</h2>
     </section>
   );
 };
 
-export default Projects;
+const mapStateToProps = (state) => {
+  return { myData: state.myData };
+};
+
+export default connect(mapStateToProps)(Projects);

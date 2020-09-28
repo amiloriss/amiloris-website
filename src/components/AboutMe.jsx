@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getData, getRepos } from '../actions/action';
 import GitHubRepos from './GitHubRepos';
@@ -61,7 +61,6 @@ AboutMe.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return { myData: state.myData, myRepos: state.myData };
 };
 
