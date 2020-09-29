@@ -1,5 +1,9 @@
-import { GET_DATA, GET_ERROR, GET_REPOS } from './types';
+import { GET_DATA, GET_ERROR, GET_REPOS, SET_THEME } from './types';
 import axios from 'axios';
+
+export const changeTheme = (setTheme) => (dispatch) => {
+  dispatch({ type: SET_THEME, payload: setTheme });
+};
 
 export const getRepos = () => async (dispatch) => {
   try {

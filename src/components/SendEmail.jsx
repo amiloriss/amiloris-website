@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getMailData } from '../actions/action';
 import Alert from './Alert';
 
-const SendEmail = ({ getMailData }) => {
+const SendEmail = ({ getMailData, isDark }) => {
   const [alert, setAlert] = useState({ msg: '', isAlerted: false });
   const [mail, setMail] = useState({
     email: '',
@@ -39,6 +39,11 @@ const SendEmail = ({ getMailData }) => {
       <Alert msg={alert.msg} active={alert.isAlerted} />
       <form onSubmit={onSubmit}>
         <input
+          style={{
+            transition: 'all 0.15s',
+            color: isDark && '#a8dadc',
+            backgroundColor: isDark && '#000',
+          }}
           onChange={onChange}
           placeholder="email"
           a
@@ -47,6 +52,11 @@ const SendEmail = ({ getMailData }) => {
           value={email}
         />
         <input
+          style={{
+            transition: 'all 0.15s',
+            color: isDark && '#a8dadc',
+            backgroundColor: isDark && '#000',
+          }}
           onChange={onChange}
           placeholder="name"
           name="name"
@@ -54,6 +64,11 @@ const SendEmail = ({ getMailData }) => {
           value={name}
         />
         <input
+          style={{
+            transition: 'all 0.15s',
+            color: isDark && '#a8dadc',
+            backgroundColor: isDark && '#000',
+          }}
           onChange={onChange}
           placeholder="subject"
           name="subject"
@@ -61,6 +76,11 @@ const SendEmail = ({ getMailData }) => {
           value={subject}
         />
         <textarea
+          style={{
+            transition: 'all 0.15s',
+            color: isDark && '#a8dadc',
+            backgroundColor: isDark && '#000',
+          }}
           onChange={onChange}
           placeholder="message"
           name="message"
@@ -73,4 +93,10 @@ const SendEmail = ({ getMailData }) => {
   );
 };
 
-export default connect(null, { getMailData })(SendEmail);
+const mapStateToProps = (state) => {
+  return {
+    isDark: state.myData.theme,
+  };
+};
+
+export default connect(mapStateToProps, { getMailData })(SendEmail);

@@ -8,7 +8,7 @@ import SendEmail from '../components/SendEmail';
 import { getData } from '../actions/action';
 import { WaveLoading } from 'react-loadingg';
 
-const Main = ({ myData: { data }, getData }) => {
+const Main = ({ myData: { data }, getData, isDark }) => {
   useEffect(() => {
     getData();
     // eslint-disable-next-line
@@ -17,7 +17,12 @@ const Main = ({ myData: { data }, getData }) => {
     return <WaveLoading color="#1d3557" />;
   } else
     return (
-      <main>
+      <main
+        style={{
+          transition: 'all 0.15s',
+          backgroundColor: isDark && '#000',
+        }}
+      >
         <Greeting />
         <div className="container">
           <AboutMe />
@@ -30,7 +35,7 @@ const Main = ({ myData: { data }, getData }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { myData: state.myData };
+  return { myData: state.myData, isDark: state.myData.theme };
 };
 
 export default connect(mapStateToProps, { getData })(Main);

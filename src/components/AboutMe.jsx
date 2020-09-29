@@ -9,6 +9,7 @@ const AboutMe = ({
   myData: { data, repos },
   getData,
   getRepos,
+  isDark,
 }) => {
   useEffect(() => {
     getRepos();
@@ -22,7 +23,9 @@ const AboutMe = ({
       </h2>
       <div className="information">
         <img src={data.avatar} alt="" />
-        <p>{data.text}</p>
+        <p style={{ transition: 'all 0.15s', color: isDark && '#a8dadc' }}>
+          {data.text}
+        </p>
       </div>
 
       <div className="contacts">
@@ -45,7 +48,9 @@ const AboutMe = ({
         <ul>
           {repos !== null
             ? repos.map((repo) => {
-                return <GitHubRepos key={repo.id} repo={repo} />;
+                return (
+                  <GitHubRepos isDark={isDark} key={repo.id} repo={repo} />
+                );
               })
             : null}
         </ul>
@@ -63,7 +68,11 @@ AboutMe.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  return { myData: state.myData, myRepos: state.myData };
+  return {
+    myData: state.myData,
+    myRepos: state.myData,
+    isDark: state.myData.theme,
+  };
 };
 
 export default connect(mapStateToProps, { getData, getRepos })(AboutMe);
