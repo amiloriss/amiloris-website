@@ -50,10 +50,9 @@ li {
 main {
   section {
     padding-top: 5rem;
-    // height: 1080px;
-    // min-height: 900px;
   }
   .greeting {
+    z-index: 1;
     position: relative;
     height: 100vh;
     .greeting-title {
@@ -65,11 +64,8 @@ main {
     }
   }
   section > h2 {
-    // text-align: right;
     color: $light-blue;
-    // background-color: $dark-blue;
     border-bottom: 2px solid $dark-blue;
-    // padding: 10px;
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-bottom: 30px;
