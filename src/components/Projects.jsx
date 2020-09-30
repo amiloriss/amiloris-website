@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions/action';
 import Project from './Project';
 import ProjectDetail from './ProjectDetail';
 
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const Projects = ({ myData: { projects } }) => {
   useEffect(() => {
@@ -33,10 +33,9 @@ const Projects = ({ myData: { projects } }) => {
         />
 
         {Object.values(projects).map((project) => {
-          const { name, description, tech, cover } = project;
           return (
             <Route
-              path={`/${name}`}
+              path={`/${project.name}`}
               render={() => <ProjectDetail info={project} />}
             />
           );

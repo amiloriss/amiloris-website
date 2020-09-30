@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import AboutMe from '../components/AboutMe';
 import Greeting from '../components/Greeting';

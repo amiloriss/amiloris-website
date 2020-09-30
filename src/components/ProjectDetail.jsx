@@ -16,10 +16,10 @@ const ProjectDetail = ({ info }) => {
           <p className="tech">Technology I used: {tech}</p>
           <div className="links">
             <a target="blank" href={github}>
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
             </a>
             <a target="blank" href={web}>
-              <i class="fas fa-globe-americas"></i>
+              <i className="fas fa-globe-americas"></i>
             </a>
           </div>
         </div>
