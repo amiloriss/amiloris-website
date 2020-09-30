@@ -8,13 +8,17 @@ import AppWrapper from './components/AppWrapper';
 import store from './store/store';
 import { Provider } from 'react-redux';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+
 const App = () => {
   return (
-    <Provider store={store}>
-      <div>
-        <AppWrapper />
-      </div>
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <div>
+          <AppWrapper />
+        </div>
+      </Provider>
+    </Router>
   );
 };
 
