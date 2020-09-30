@@ -3,21 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.scss';
 
-import Header from './layouts/Header';
-import Main from './layouts/Main';
-import Footer from './layouts/Footer';
-import ThemeToggle from './components/ThemeToggle';
+import AppWrapper from './components/AppWrapper';
 
 import store from './store/store';
 import { Provider } from 'react-redux';
 
 const App = () => {
   return (
-    <Provider store={store} r>
+    <Provider store={store}>
       <div>
-        <Header />
-        <Main />
-        <Footer />
+        <AppWrapper />
       </div>
     </Provider>
   );

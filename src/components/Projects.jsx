@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions/action';
+import Project from './Project';
 
 const Projects = ({ myData: { projects } }) => {
   useEffect(() => {
     getData();
     // eslint-disable - next - line
   }, []);
-  console.log(projects);
+
   return (
     <section className="projects" id="projects">
       <h2>
@@ -16,14 +17,8 @@ const Projects = ({ myData: { projects } }) => {
       <div className="projects-wrapper">
         <ul className="projects-list">
           {Object.values(projects).map((project) => {
-            const { name, description, tech, cover } = project;
-            return (
-              <li>
-                <div>
-                  <img src={cover} alt="project" />
-                </div>
-              </li>
-            );
+            const { id, name, description, tech, cover } = project;
+            return <Project info={project} />;
           })}
         </ul>
       </div>
