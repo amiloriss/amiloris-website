@@ -1,31 +1,45 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions/action';
+import Project from './Project';
+import ProjectDetail from './ProjectDetail';
+
+import { Route } from 'react-router-dom';
 
 const Projects = ({ myData: { projects } }) => {
   useEffect(() => {
     getData();
     // eslint-disable - next - line
   }, []);
-  console.log(projects);
+
   return (
     <section className="projects" id="projects">
       <h2>
         my projects <i className="fas fa-folder"></i>
       </h2>
       <div className="projects-wrapper">
-        <ul className="projects-list">
-          {Object.values(projects).map((project) => {
-            const { name, description, tech, cover, id } = project;
+        <Route
+          exact
+          path="/"
+          render={() => {
             return (
-              <li key={id}>
-                <div>
-                  <img src={cover} alt="project" />
-                </div>
-              </li>
+              <ul className="projects-list">
+                {Object.values(projects).map((project) => {
+                  return <Project info={project} />;
+                })}
+              </ul>
             );
-          })}
-        </ul>
+          }}
+        />
+
+        {Object.values(projects).map((project) => {
+          return (
+            <Route
+              path={`/${project.name}`}
+              render={() => <ProjectDetail info={project} />}
+            />
+          );
+        })}
       </div>
     </section>
   );

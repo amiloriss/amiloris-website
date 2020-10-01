@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getData } from '../actions/action';
 
-const Stack = ({ myData: { tech_stack } }) => {
+const Stack = ({ myData: { tech_stack }, isDark }) => {
   useEffect(() => {
     getData();
     // eslint - disable - next - line;
@@ -17,7 +17,11 @@ const Stack = ({ myData: { tech_stack } }) => {
           return (
             <li key={id}>
               <img width="80px" src={el.logo} alt="logo" />{' '}
-              <span>{el.name}</span>
+              <span
+                style={{ transition: 'all 0.15s', color: isDark && '#a8dadc' }}
+              >
+                {el.name}
+              </span>
             </li>
           );
         })}
@@ -27,7 +31,7 @@ const Stack = ({ myData: { tech_stack } }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { myData: state.myData.data };
+  return { myData: state.myData.data, isDark: state.myData.theme };
 };
 
 export default connect(mapStateToProps, { getData })(Stack);

@@ -3,22 +3,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.scss';
 
-import Header from './layouts/Header';
-import Main from './layouts/Main';
-import Footer from './layouts/Footer';
+import AppWrapper from './components/AppWrapper';
 
 import store from './store/store';
 import { Provider } from 'react-redux';
 
+import { BrowserRouter as Router } from 'react-router-dom';
+
 const App = () => {
   return (
-    <Provider store={store} r>
-      <div>
-        <Header />
-        <Main />
-        <Footer />
-      </div>
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <div>
+          <AppWrapper />
+        </div>
+      </Provider>
+    </Router>
   );
 };
 
