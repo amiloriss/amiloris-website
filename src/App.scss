@@ -16,12 +16,19 @@ li {
   list-style: none;
 }
 
+.main-container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .main-header {
   background-color: $dark-blue;
   box-shadow: 0 0 5px #000;
   position: fixed;
   width: 100%;
   top: 0;
+  left: -50%;
+  transform: translateX(50%);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -132,7 +139,6 @@ main {
       padding-left: 0;
 
       li {
-        // text-align: center;
         border-bottom: 3px solid $middle-blue;
         margin-bottom: 70px;
         padding-bottom: 5px;
@@ -152,7 +158,6 @@ main {
       padding: 10px;
       color: $light-blue;
       background-color: $dark-blue;
-      height: 590px;
       .projects-list {
         column-count: 3;
         padding: 40px;
@@ -327,3 +332,5 @@ footer {
     }
   }
 }
+
+@import './MediaQueries';

@@ -1,0 +1,155 @@
+@media all and (max-width: 1199px) {
+  main {
+    .greeting {
+      .greeting-title {
+        font-size: 35px;
+      }
+    }
+    .projects {
+      .projects-wrapper {
+        .projects-list {
+          padding: 20px 40px;
+          li {
+            div {
+              img {
+                width: 250px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 991px) {
+  main {
+    .greeting {
+      .greeting-title {
+        font-size: 28px;
+      }
+    }
+
+    .about-me {
+      .information {
+        img {
+          height: 210px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+      .contacts {
+        ul {
+          li {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .stack {
+      .tech-stack-list {
+        li {
+          span {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .projects {
+      .projects-wrapper {
+        .projects-list {
+          li {
+            &:nth-child(1),
+            &:nth-child(3),
+            &:nth-child(5) {
+              margin-bottom: 20px;
+            }
+            div {
+              img {
+                width: 180px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  main {
+    .greeting {
+      .greeting-title {
+        font-size: 25px;
+      }
+    }
+
+    .about-me {
+      .information {
+        display: block;
+        img {
+          float: left;
+          height: 180px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+      .contacts {
+        ul {
+          li {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .github-repos {
+      ul {
+        li {
+          font-size: 14px;
+          h5 {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .stack {
+      .tech-stack-list {
+        li {
+          img {
+            width: 40px;
+          }
+          span {
+            font-size: 14.5px;
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+
+    .projects {
+      .projects-wrapper {
+        .projects-list {
+          column-count: 2;
+          li {
+            &:nth-child(1),
+            &:nth-child(3),
+            &:nth-child(5) {
+              margin-bottom: 20px;
+            }
+            div {
+              img {
+                width: 180px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Router>
       <Provider store={store}>
-        <div>
+        <div className="main-container">
           <AppWrapper />
         </div>
       </Provider>
