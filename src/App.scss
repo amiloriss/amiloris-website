@@ -261,7 +261,6 @@ main {
       background-color: $dark-blue;
       padding: 10px;
       z-index: 10;
-
       .back-to-list {
         font-size: 40px;
         color: $middle-blue;
@@ -284,22 +283,22 @@ main {
         padding: 0 40px;
         height: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        position: relative;
+        top: 15%;
         img {
-          width: 500px;
+          width: 200px !important;
+          margin-bottom: 50px;
         }
         img,
         .description {
-          float: left;
-          width: 50%;
           position: relative;
         }
         .description {
           letter-spacing: 2px;
           height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
+
           .descr-text {
             font-size: 24px;
           }
@@ -307,10 +306,7 @@ main {
             font-size: 18px;
           }
           .links {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-
+            float: right;
             & > * {
               font-size: 30px;
               color: $red-color;

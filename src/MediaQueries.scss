@@ -169,7 +169,7 @@
   }
 }
 
-@media all and (max-width: 499px) {
+@media all and (max-width: 510px) {
   main {
     .stack {
       .tech-stack-list {
@@ -225,6 +225,66 @@
           text-transform: uppercase;
           width: 8rem;
         }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 440px) {
+  .main-header {
+    padding: 3.15px 0;
+    .title {
+      margin-top: 5px;
+      font-size: 22px;
+    }
+    .menu-wrapper {
+      .toggler {
+        height: 30px;
+        width: 20px;
+      }
+    }
+
+    label {
+      margin-top: 5px;
+      i {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  main {
+    section > h2 {
+      font-size: 19px;
+    }
+    .about-me {
+      .information {
+        img {
+          height: 150px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .contacts {
+        ul {
+          flex-direction: column;
+          align-items: center;
+          li {
+            margin: 2px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and(max-width: 340px) {
+  main {
+    .stack {
+      .tech-stack-list {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
       }
     }
   }
