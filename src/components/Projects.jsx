@@ -18,29 +18,23 @@ const Projects = ({ myData: { projects } }) => {
         my projects <i className="fas fa-folder"></i>
       </h2>
       <div className="projects-wrapper">
-        <Route
-          exact
-          path="/"
-          render={() => {
-            return (
-              <ul className="projects-list">
-                {Object.values(projects).map((project) => {
-                  return <Project info={project} />;
-                })}
-              </ul>
-            );
-          }}
-        />
-
-        {Object.values(projects).map((project) => {
-          return (
-            <Route
-              path={`/${project.name}`}
-              render={() => <ProjectDetail info={project} />}
-            />
-          );
-        })}
+        <ul className="projects-list">
+          {Object.values(projects).map((project) => {
+            return <Project info={project} />;
+          })}
+        </ul>
       </div>
+
+      {Object.values(projects).map((project) => {
+        return (
+          <Route
+            path={`/${project.name}`}
+            render={() => {
+              return <ProjectDetail info={project} />;
+            }}
+          />
+        );
+      })}
     </section>
   );
 };

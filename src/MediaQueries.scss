@@ -80,6 +80,19 @@
 }
 
 @media all and (max-width: 767px) {
+  .main-header {
+    .menu-wrapper {
+      display: block !important;
+      .navigation-small {
+        display: block !important;
+      }
+    }
+
+    .navigation {
+      display: none;
+    }
+  }
+
   main {
     .greeting {
       .greeting-title {
@@ -135,6 +148,8 @@
     .projects {
       .projects-wrapper {
         .projects-list {
+          -webkit-column-count: 2;
+          -moz-column-count: 2;
           column-count: 2;
           li {
             &:nth-child(1),
@@ -148,6 +163,67 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 499px) {
+  main {
+    .stack {
+      .tech-stack-list {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+    }
+    .projects {
+      .projects-wrapper {
+        .projects-list {
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          column-count: 1;
+
+          li {
+            div {
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+        .project-detail {
+          position: fixed;
+          top: 0;
+          left: 0;
+          background-color: $dark-blue;
+          width: 100vw;
+          height: 100vh;
+          z-index: 10;
+
+          .project-detail-wrapper {
+            .description {
+              .links {
+                z-index: 15;
+              }
+            }
+          }
+        }
+      }
+    }
+    .send-email {
+      form {
+        & > * {
+          font-size: 16px;
+        }
+        input[type='submit'] {
+          border: none;
+          background-color: $dark-blue;
+          color: $light-blue;
+          font-size: 18px;
+          text-transform: uppercase;
+          width: 8rem;
         }
       }
     }

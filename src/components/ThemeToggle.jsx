@@ -14,16 +14,13 @@ const ThemeToggle = ({ changeTheme }) => {
       htmlFor="toggle-theme"
       style={{
         cursor: 'pointer',
-        position: 'fixed',
-        bottom: 0,
-        right: '7px',
-        zIndex: 0,
+        marginBottom: 0,
       }}
     >
       <i
         style={{
           color: darkMode ? '  #457b9d' : '#a8dadc',
-          fontSize: 40 + 'px',
+          fontSize: 35 + 'px',
         }}
         className={darkMode ? 'fas fa-moon' : 'fas fa-sun'}
       ></i>

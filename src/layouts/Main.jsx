@@ -5,7 +5,6 @@ import Greeting from '../components/Greeting';
 import Stack from '../components/Stack';
 import Projects from '../components/Projects';
 import SendEmail from '../components/SendEmail';
-import ThemeToggle from '../components/ThemeToggle';
 
 const Main = ({ isDark }) => {
   return (
@@ -16,7 +15,7 @@ const Main = ({ isDark }) => {
       }}
     >
       <Greeting />
-      <ThemeToggle />
+
       <div className="container">
         <AboutMe />
         <Stack />
