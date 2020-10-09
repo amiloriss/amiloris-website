@@ -88,7 +88,7 @@ li {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 50%;
+        top: 45%;
         left: 50%;
         width: 90%;
         transform: translate(-50%, -50%);
@@ -285,10 +285,9 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
+        top: 3%;
         position: relative;
-        top: 15%;
         img {
-          width: 200px !important;
           margin-bottom: 50px;
         }
         img,
@@ -301,9 +300,11 @@ main {
 
           .descr-text {
             font-size: 24px;
+            text-align: justify;
           }
           .tech {
             font-size: 18px;
+            text-align: justify;
           }
           .links {
             float: right;
