@@ -1,4 +1,4 @@
-import { GET_DATA, GET_ERROR, GET_REPOS, SET_THEME } from './types';
+import { GET_DATA, GET_REPOS, SET_THEME } from './types';
 import axios from 'axios';
 
 export const changeTheme = (setTheme) => (dispatch) => {
@@ -10,9 +10,7 @@ export const getRepos = () => async (dispatch) => {
     const res = await axios.get('https://api.github.com/users/amiloriss/repos');
     const data = res.data;
     dispatch({ type: GET_REPOS, payload: data });
-  } catch (error) {
-    dispatch({ type: GET_ERROR });
-  }
+  } catch (error) { return error}
 };
 
 export const getData = () => async (dispatch) => {
@@ -22,9 +20,7 @@ export const getData = () => async (dispatch) => {
     );
     const data = res.data;
     dispatch({ type: GET_DATA, payload: data });
-  } catch (error) {
-    dispatch({ type: GET_ERROR });
-  }
+  } catch (error) { return error}
 };
 
 export const getMailData = (email, name, subject, message) => () => {

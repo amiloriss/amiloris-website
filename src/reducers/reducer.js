@@ -1,4 +1,4 @@
-import { GET_DATA, GET_ERROR, GET_REPOS, SET_THEME } from '../actions/types';
+import { GET_DATA, GET_REPOS, SET_THEME } from '../actions/types';
 
 const initialState = {
   data: null,
@@ -15,8 +15,6 @@ export default (state = initialState, action) => {
       return { ...state, repos: action.payload };
     case SET_THEME:
       return { ...state, theme: action.payload };
-    case GET_ERROR:
-      return { ...state };
     default:
       return state;
   }

@@ -11,7 +11,7 @@ const Projects = ({ myData: { projects } }) => {
     getData();
     // eslint-disable - next - line
   }, []);
-
+  console.log();
   return (
     <section className="projects" id="projects">
       <h2>
@@ -20,7 +20,7 @@ const Projects = ({ myData: { projects } }) => {
       <div className="projects-wrapper">
         <ul className="projects-list">
           {Object.values(projects).map((project) => {
-            return <Project info={project} />;
+            return <Project key={project.id} info={project} />;
           })}
         </ul>
       </div>
@@ -30,7 +30,7 @@ const Projects = ({ myData: { projects } }) => {
           <Route
             path={`/${project.name}`}
             render={() => {
-              return <ProjectDetail info={project} />;
+              return <ProjectDetail key={project.id} info={project} />;
             }}
           />
         );
